@@ -1,0 +1,40 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: green-tst
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: green-acc
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: blue-tst
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: blue-acc
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: yellow-tst
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: yellow-acc
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: red-tst
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: red-acc
+---
