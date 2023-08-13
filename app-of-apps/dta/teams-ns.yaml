@@ -6,7 +6,7 @@ metadata:
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
-  project: project-dta
+  project: platform-dta
   sources:
   - repoURL: https://github.com/mojtabaimani/sodeko-platform-services.git
     path: tools/teams-ns/dta

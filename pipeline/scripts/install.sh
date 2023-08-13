@@ -30,7 +30,7 @@ kubectl create secret generic repo-platform-tools --context $CONTEXT -n $NAMESPA
 kubectl label secret repo-platform-tools argocd.argoproj.io/secret-type=repository --context $CONTEXT -n $NAMESPACE
 
 # install argocd using helm
-PROJECT_NAME=project-$ENVIRONMENT
+PROJECT_NAME=platform-$ENVIRONMENT
 VALUES_FILE=app-values/argocd/argocd-values-$ENVIRONMENT.yaml
 helm repo add argocd https://argoproj.github.io/argo-helm
 helm repo update
