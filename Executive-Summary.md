@@ -1,5 +1,7 @@
 # Sodeko IT Solution
 
+![Repos](sodeko-repos.png)
+
 This design serves as a comprehensive solution tailored to meet Sodeko's precise requirements, grounded in platform engineering and gitOps principles. The core of this approach revolves around the repository, serving as the singular source of truth. Changes made to the repository are seamlessly pulled by ArgoCD from within the cluster, maintaining synchronization and curbing manual deviations. Notably, the existing Kubernetes cluster, a well-established container management system, serves as the foundation for the teams' operations.
 
 ## Kubernetes Clusters and Teams:
