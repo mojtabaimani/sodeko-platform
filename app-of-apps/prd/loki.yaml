@@ -1,23 +1,23 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: loki-stack
+  name: loki
   namespace: argocd
   finalizers:
   - resources-finalizer.argocd.argoproj.io
 spec:
-  project: platform-dta
+  project: platform-prd
   sources:
   - repoURL: https://github.com/mojtabaimani/sodeko-platform-services.git
-    path: tools/loki-stack
+    path: tools/loki
     targetRevision: HEAD
     helm:
-      releaseName: loki-stack
+      releaseName: loki
       valueFiles:
-        - ../../app-values/loki/loki-values-dta.yaml
+        - ../../app-values/loki/loki-values-prd.yaml
   destination:
     server: https://kubernetes.default.svc
-    namespace: loki
+    namespace: prometheus
   syncPolicy:
     managedNamespaceMetadata:
       labels:
