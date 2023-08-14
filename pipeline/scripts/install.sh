@@ -63,4 +63,4 @@ spec:
 EOF
 
 # add app of the apps to the argocd server using yaml file
-kubectl apply --context $CONTEXT -n $NAMESPACE -f pipeline/argocd/app-of-apps-$ENVIRONMENT.yaml
+kubectl apply --context $CONTEXT -n $NAMESPACE -f pipeline/argocd/app-of-apps-platform-$ENVIRONMENT.yaml
