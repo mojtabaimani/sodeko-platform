@@ -32,7 +32,7 @@ This design serves as a comprehensive solution tailored to meet Sodeko's precise
 - Teams have the flexibility to deploy their own applications and services as needed.
 - The separation of applications and configurations allows for environment-specific customization.
 - Team-specific tools outside of the platform team's purview are also accommodated.
-- Application deactivation in a particular environment can be achieved by introducing ".disabled" tags in the application yaml or removing the file entirely.
+- Application deactivation in a particular environment can be achieved by adding ".disabled" extension to the application yaml file or removing the file entirely.
 
 ## Secret Management:
 - Encrypted secrets are achieved through sealed-secrets. Encryption is performed with cluster-specific keys, and the encrypted secrets are stored in the repository. This practice facilitates historical tracking, change monitoring, and accountability.
