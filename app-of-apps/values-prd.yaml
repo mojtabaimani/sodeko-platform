@@ -10,7 +10,7 @@ argocdApplications:
     valuesFile: ../../app-values/guestbook/guestbook-values-prd.yaml
 
   prometheus:
-    disableAutomated: false
+    disableAutomated: true
     enabled: false
     valuesFile: ../../app-values/prometheus/prometheus-values-prd.yaml
 

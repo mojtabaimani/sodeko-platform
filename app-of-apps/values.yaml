@@ -22,7 +22,7 @@ argocdApplications:
 
   prometheus:
     disableAutomated: false
-    enabled: true
+    enabled: false
     name: prometheus
     namespace: prometheus
     helm: true
