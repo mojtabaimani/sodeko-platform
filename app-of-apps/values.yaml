@@ -11,11 +11,9 @@ global:
       targetRevision: HEAD
 
 argocdApplications:
-  helmGuestbook:
+  helm-guestbook:
     disableAutomated: false
     enabled: true
-    name: helm-guestbook
-    namespace: helm-guestbook
     helm: true
     valuesFile: ../../app-values/guestbook/guestbook-values-dta.yaml
 #    targetRevision: HEAD
@@ -23,8 +21,6 @@ argocdApplications:
   prometheus:
     disableAutomated: false
     enabled: false
-    name: prometheus
-    namespace: prometheus
     helm: true
     valuesFile: ../../app-values/prometheus/prometheus-values-dta.yaml
 #    targetRevision: HEAD
@@ -32,8 +28,6 @@ argocdApplications:
   sealed-secrets:
     disableAutomated: false
     enabled: true
-    name: sealed-secrets
-    namespace: sealed-secrets
     helm: true
     valuesFile: ../../app-values/sealed-secrets/sealed-secrets-values-dta.yaml
 #    targetRevision: HEAD
@@ -41,7 +35,6 @@ argocdApplications:
   teams-namespaces:
     disableAutomated: false
     enabled: true
-    name: teams-namespaces
     namespace: default
     helm: true
     valuesFile: ../../app-values/teams-namespaces/teams-namespaces-values-dta.yaml

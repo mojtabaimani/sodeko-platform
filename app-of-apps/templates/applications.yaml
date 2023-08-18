@@ -3,7 +3,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: {{ .name }}-{{ $.Values.global.env }}
+  name: {{ default . .name }}-{{ $.Values.global.env }}
   namespace: argocd
   finalizers:
   - resources-finalizer.argocd.argoproj.io
@@ -12,14 +12,14 @@ spec:
   source:
     repoURL:  {{ $.Values.global.spec.source.repoURL }}
     targetRevision: {{ default $.Values.global.spec.source.targetRevision .targetRevision }}
-    path: tools/{{ .name }}
+    path: tools/{{ default . .name }}
     {{- if default $.Values.global.helmDefault .helm }}
     helm:
       valueFiles:
       - {{ default $.Values.global.valuesFile .valuesFile }}
     {{- end }}
   destination:
-    namespace: {{ .namespace }}
+    namespace: {{ default . .namespace }}
     server: {{ $.Values.global.spec.destination.server }}
   syncPolicy:
     {{- if not .disableAutomated }}
