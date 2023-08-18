@@ -1,0 +1,46 @@
+global:
+  env: dta
+  helmDefault: false
+  valuesFile: values.yaml
+  spec:
+    project: platform-dta
+    destination:
+      server: https://kubernetes.default.svc
+    source:
+      repoURL: https://github.com/mojtabaimani/sodeko-platform-services.git
+      targetRevision: HEAD
+
+argocdApplications:
+  helmGuestbook:
+    disableAutomated: false
+    enabled: true
+    name: helm-guestbook
+    namespace: helm-guestbook
+    helm: true
+    valuesFile: ../app-values/guestbook/guestbook-values-dta.yaml
+#    targetRevision: HEAD
+
+  prometheus:
+    disableAutomated: false
+    enabled: true
+    name: prometheus
+    namespace: prometheus
+    helm: true
+    valuesFile: ../app-values/prometheus/prometheus-values-dta.yaml
+#    targetRevision: HEAD
+
+  sealed-secrets:
+    disableAutomated: false
+    enabled: true
+    name: sealed-secrets
+    namespace: sealed-secrets
+    helm: true
+    valuesFile: ../app-values/sealed-secrets/sealed-secrets-values-dta.yaml
+#    targetRevision: HEAD
+
+  teams-namespaces:
+    disableAutomated: false
+    enabled: true
+    name: teams-namespaces/dta
+    namespace: teams-namespaces
+#    targetRevision: HEAD

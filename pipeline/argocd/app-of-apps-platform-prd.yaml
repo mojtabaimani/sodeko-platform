@@ -11,9 +11,12 @@ spec:
     server: https://kubernetes.default.svc
   project: platform-prd
   source:
-    path: ./app-of-apps/prd
+    path: ./app-of-apps
     repoURL: https://github.com/mojtabaimani/sodeko-platform-services.git
     targetRevision: HEAD
+    helm:
+      valueFiles:
+        - values-prd.yaml
   syncPolicy:
     automated:
       prune: true

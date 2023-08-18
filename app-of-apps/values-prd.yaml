@@ -1,0 +1,18 @@
+global:
+  env: prd
+  spec:
+    project: platform-prd
+    source:
+      targetRevision: 1.0.0
+
+argocdApplications:
+  helmGuestbook:
+    valuesFile: ../app-values/guestbook/guestbook-values-prd.yaml
+
+  prometheus:
+    disableAutomated: false
+    enabled: false
+    valuesFile: ../app-values/prometheus/prometheus-values-prd.yaml
+
+  teams-namespaces:
+    name: teams-namespaces/prd

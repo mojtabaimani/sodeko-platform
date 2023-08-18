@@ -11,9 +11,12 @@ spec:
     server: https://kubernetes.default.svc
   project: platform-dta
   source:
-    path: ./app-of-apps/dta
+    path: ./app-of-apps
     repoURL: https://github.com/mojtabaimani/sodeko-platform-services.git
     targetRevision: HEAD
+    helm:
+      valueFiles:
+        - values.yaml
   syncPolicy:
     automated:
       prune: true
