@@ -16,7 +16,7 @@ spec:
     targetRevision: HEAD
     helm:
       valueFiles:
-        - values.yaml
+        - values-dta.yaml
   syncPolicy:
     automated:
       prune: true

@@ -1,5 +1,5 @@
 {{- range $app := .Values.argocdApplications -}}
-{{ if .enabled }}
+{{ if (default $.Values.global.enabled .enabled) }}
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
@@ -22,7 +22,7 @@ spec:
     namespace: {{ default . .namespace }}
     server: {{ $.Values.global.spec.destination.server }}
   syncPolicy:
-    {{- if not .disableAutomated }}
+    {{- if (default $.Values.global.automated .automated) }}
     automated:
       prune: true
       selfHeal: true
