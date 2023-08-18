@@ -17,7 +17,7 @@ argocdApplications:
     name: helm-guestbook
     namespace: helm-guestbook
     helm: true
-    valuesFile: ../app-values/guestbook/guestbook-values-dta.yaml
+    valuesFile: ../../app-values/guestbook/guestbook-values-dta.yaml
 #    targetRevision: HEAD
 
   prometheus:
@@ -26,7 +26,7 @@ argocdApplications:
     name: prometheus
     namespace: prometheus
     helm: true
-    valuesFile: ../app-values/prometheus/prometheus-values-dta.yaml
+    valuesFile: ../../app-values/prometheus/prometheus-values-dta.yaml
 #    targetRevision: HEAD
 
   sealed-secrets:
@@ -35,7 +35,7 @@ argocdApplications:
     name: sealed-secrets
     namespace: sealed-secrets
     helm: true
-    valuesFile: ../app-values/sealed-secrets/sealed-secrets-values-dta.yaml
+    valuesFile: ../../app-values/sealed-secrets/sealed-secrets-values-dta.yaml
 #    targetRevision: HEAD
 
   teams-namespaces:
@@ -44,5 +44,5 @@ argocdApplications:
     name: teams-namespaces
     namespace: teams-namespaces
     helm: true
-    valuesFile: ../app-values/teams-namespaces/teams-namespaces-values-dta.yaml
+    valuesFile: ../../app-values/teams-namespaces/teams-namespaces-values-dta.yaml
 #    targetRevision: HEAD

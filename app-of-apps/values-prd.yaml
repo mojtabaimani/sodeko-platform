@@ -7,13 +7,13 @@ global:
 
 argocdApplications:
   helmGuestbook:
-    valuesFile: ../app-values/guestbook/guestbook-values-prd.yaml
+    valuesFile: ../../app-values/guestbook/guestbook-values-prd.yaml
 
   prometheus:
     disableAutomated: false
     enabled: false
-    valuesFile: ../app-values/prometheus/prometheus-values-prd.yaml
+    valuesFile: ../../app-values/prometheus/prometheus-values-prd.yaml
 
   teams-namespaces:
     name: teams-namespaces
-    valuesFile: ../app-values/teams-namespaces/teams-namespaces-values-prd.yaml
+    valuesFile: ../../app-values/teams-namespaces/teams-namespaces-values-prd.yaml
