@@ -15,4 +15,5 @@ argocdApplications:
     valuesFile: ../app-values/prometheus/prometheus-values-prd.yaml
 
   teams-namespaces:
-    name: teams-namespaces/prd
+    name: teams-namespaces
+    valuesFile: ../app-values/teams-namespaces/teams-namespaces-values-prd.yaml
