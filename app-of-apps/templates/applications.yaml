@@ -1,9 +1,9 @@
-{{- range $app := .Values.argocdApplications -}}
-{{ if (default $.Values.global.enabled .enabled) }}
+{{- range $name, $app := .Values.argocdApplications -}}
+{{ if .enabled }}
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: {{ default . .name }}-{{ $.Values.global.env }}
+  name: {{ default $name .name }}-{{ $.Values.global.env }}
   namespace: argocd
   finalizers:
   - resources-finalizer.argocd.argoproj.io
@@ -12,7 +12,7 @@ spec:
   source:
     repoURL:  {{ $.Values.global.spec.source.repoURL }}
     targetRevision: {{ default $.Values.global.spec.source.targetRevision .targetRevision }}
-    path: tools/{{ default . .name }}
+    path: tools/{{ default $name .name }}
     {{- if default $.Values.global.helmDefault .helm }}
     helm:
       valueFiles:
@@ -22,7 +22,7 @@ spec:
     namespace: {{ default . .namespace }}
     server: {{ $.Values.global.spec.destination.server }}
   syncPolicy:
-    {{- if (default $.Values.global.automated .automated) }}
+    {{- if default $.Values.global.automated .automated }}
     automated:
       prune: true
       selfHeal: true

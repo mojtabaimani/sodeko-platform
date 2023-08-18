@@ -2,7 +2,6 @@ global:
   env: dta
   helmDefault: false
   valuesFile: values.yaml
-  enabled: true
   automated: true
   spec:
     project: platform-dta
@@ -14,18 +13,23 @@ global:
 
 argocdApplications:
   helm-guestbook:
+    enabled: true
     helm: true
     valuesFile: ../../app-values/guestbook/guestbook-values-dta.yaml
 
   prometheus:
+    name: kube-prometheus-stack
+    enabled: true
     helm: true
     valuesFile: ../../app-values/prometheus/prometheus-values-dta.yaml
 
   sealed-secrets:
+    enabled: true
     helm: true
     valuesFile: ../../app-values/sealed-secrets/sealed-secrets-values-dta.yaml
 
   teams-namespaces:
+    enabled: true
     namespace: default
     helm: true
     valuesFile: ../../app-values/teams-namespaces/teams-namespaces-values-dta.yaml
