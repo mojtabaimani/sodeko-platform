@@ -42,7 +42,7 @@ argocdApplications:
     disableAutomated: false
     enabled: true
     name: teams-namespaces
-    namespace: teams-namespaces
+    namespace: default
     helm: true
     valuesFile: ../../app-values/teams-namespaces/teams-namespaces-values-dta.yaml
 #    targetRevision: HEAD
