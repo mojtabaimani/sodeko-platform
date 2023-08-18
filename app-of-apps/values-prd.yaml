@@ -10,8 +10,8 @@ argocdApplications:
     valuesFile: ../../app-values/guestbook/guestbook-values-prd.yaml
 
   prometheus:
-    disableAutomated: true
-    enabled: false
+    disableAutomated: false
+    enabled: true
     valuesFile: ../../app-values/prometheus/prometheus-values-prd.yaml
 
   teams-namespaces:
