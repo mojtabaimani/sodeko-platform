@@ -18,7 +18,6 @@ argocdApplications:
     valuesFile: ../../app-values/guestbook/guestbook-values-dta.yaml
 
   prometheus:
-    name: kube-prometheus-stack
     enabled: true
     helm: true
     valuesFile: ../../app-values/prometheus/prometheus-values-dta.yaml
