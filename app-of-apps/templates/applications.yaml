@@ -19,7 +19,7 @@ spec:
       - {{ default $.Values.global.valuesFile .valuesFile }}
     {{- end }}
   destination:
-    namespace: {{ default . .namespace }}
+    namespace: {{ default $name .namespace }}
     server: {{ $.Values.global.spec.destination.server }}
   syncPolicy:
     {{- if default $.Values.global.automated .automated }}
